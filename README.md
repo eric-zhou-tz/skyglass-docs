@@ -1,13 +1,46 @@
-# Aircraft Inspection System (Rebuild Demo)
-A reconstructed demo of a production-grade aircraft inspection system developed at SkyGlass Technologies.
+# SkyGlass – Aircraft Inspection System (Startup Project)
 
-The original system leveraged computer vision to detect structural defects in aircraft imagery, achieving real-world validation with aviation operators. This repository recreates the system architecture and interaction flow for demonstration purposes.
+SkyGlass was a computer vision startup focused on automating aircraft inspection workflows using real-world imagery and defect detection models.
 
-## Overview
+- **Stage:** MVP with real-world pilot testing  
+- **Users:** General aviation pilots and flight centers  
+- **Team:** 4 engineers + 1 pilot  
+- **My Role:** Led system design and built the end-to-end ML pipeline (data ingestion → model inference → inspection feedback loop)
 
-This project is a high-level rebuild of a previously developed aircraft inspection system.
+This repository is a **reconstructed demo** of the original system architecture and interaction loop.  
+Production code, models, and datasets are not included due to proprietary constraints.
 
-The original system used computer vision to detect structural defects in aircraft imagery. Due to proprietary constraints, model weights and production code are not included. This repository reconstructs the core architecture and user workflow for demonstration purposes.
+---
+
+## Impact
+
+- Trained on ~12K labeled aircraft images across multiple defect classes  
+- Achieved ~0.73 mAP@0.5 on detection tasks  
+- Reduced inspection time by ~18% during pilot testing  
+- Evaluated with real aviation operators in live inspection workflows  
+
+---
+
+## Key Technical Work
+
+- Designed the image ingestion and preprocessing pipeline for field-captured aircraft data  
+- Built defect detection workflows using computer vision models under noisy, real-world conditions  
+- Developed the feedback loop between model outputs and user inspection decisions  
+- Handled challenges including lighting variability, limited labeled data, and deployment constraints  
+
+---
+
+## Outcome
+
+The system reached MVP stage and was tested in real-world pilot environments.
+
+The project was not taken to full production due to regulatory and safety constraints (e.g., FAA compliance requirements for safety-critical inspection systems).
+
+**Key learnings:**
+- Designing ML systems requires tight integration between model outputs and user workflows  
+- Real-world data quality and distribution shift are primary bottlenecks, not model architecture  
+- Deployment in safety-critical domains introduces regulatory and validation challenges beyond model performance  
+
 
 ---
 
