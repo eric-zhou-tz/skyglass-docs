@@ -1,6 +1,7 @@
 # Aircraft Inspection System (Rebuild Demo)
+A reconstructed demo of a production-grade aircraft inspection system developed at SkyGlass Technologies.
 
-A reconstructed demo of a computer vision-based aircraft inspection system, originally developed as part of SkyGlass Technologies Inc.
+The original system leveraged computer vision to detect structural defects in aircraft imagery, achieving real-world validation with aviation operators. This repository recreates the system architecture and interaction flow for demonstration purposes.
 
 ## Overview
 
@@ -25,12 +26,17 @@ This rebuild focuses on recreating that interaction loop:
 ---
 
 ## Motivation
+Aircraft inspection is a safety-critical, time-intensive process requiring precise identification of small structural defects.
 
-Manual aircraft inspection is time-intensive and requires careful attention to small structural details.
-
-This project explores how computer vision can assist inspectors by highlighting areas of interest and streamlining the inspection process.
-
+This system was designed to assist real-world inspection workflows by highlighting high-risk regions, reducing cognitive load on inspectors, and accelerating inspection time.
 ---
+
+## Why This Project Matters
+
+This project demonstrates:
+- End-to-end ML system design (data → model → decision → UX)
+- Real-world deployment considerations (latency, usability, uncertainty)
+- Modular architecture for extending perception models into production systems
 
 ## Diagram
 
@@ -177,7 +183,14 @@ More advanced components (e.g., anomaly detection, policy engine, learning loop)
 
 **Data Flow**
 
-Image → API request → Detection service → Parsed results → UI overlay
+1. Inspection imagery is selected through the frontend interface.
+2. The client issues a detection request to the backend API with the target image reference.
+3. The API passes the request through a service layer that abstracts perception logic from transport and presentation concerns.
+4. The detection module retrieves simulated inference outputs from YOLO-format label files, mimicking the behavior of a production object detection model.
+5. Parsed detections are normalized into a consistent response schema containing defect classes, confidence-style metadata, and bounding box coordinates.
+6. The response is returned to the frontend, where normalized coordinates are transformed into image-space overlays.
+7. The interface renders annotated defect regions alongside contextual inspection notes and review controls.
+8. The resulting workflow recreates the core operator loop of the original system: perception, visualization, and inspection decision support.
 
 ---
 
@@ -212,27 +225,4 @@ This design allows the system to be extended with real models (e.g., YOLO, DETR)
 
 **Other**
 - YOLO annotation format (simulated inference)
-
----
-
-## Getting Started
-
-## Running with Docker
-
-```bash
-docker-compose up --build
-
-Frontend: http://localhost:5173
-
-Backend: http://localhost:8000
-
-### Backend
-
-```bash
-cd backend
-uvicorn app.main:app --reload
-
-### Frontend
-cd frontend
-npm install
 npm run dev
