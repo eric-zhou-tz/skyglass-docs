@@ -59,9 +59,9 @@ This rebuild focuses on recreating that interaction loop:
 ---
 
 ## Motivation
-Aircraft inspection is a safety-critical, time-intensive process requiring precise identification of small structural defects.
+Aircraft inspection is a safety-critical, time-intensive process requiring precise identification of small structural defects. This system was designed to assist real-world inspection workflows by highlighting high-risk regions, reducing cognitive load on inspectors, and accelerating inspection time.**
 
-This system was designed to assist real-world inspection workflows by highlighting high-risk regions, reducing cognitive load on inspectors, and accelerating inspection time.
+
 ---
 
 ## Why This Project Matters
