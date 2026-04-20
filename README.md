@@ -258,4 +258,3 @@ This design allows the system to be extended with real models (e.g., YOLO, DETR)
 
 **Other**
 - YOLO annotation format (simulated inference)
-npm run dev
